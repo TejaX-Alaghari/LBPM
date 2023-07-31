@@ -1,27 +1,26 @@
-
 # configure
 rm -rf CMake*
-cmake                                    \
-    -D CMAKE_C_COMPILER:PATH=mpicc          \
-    -D CMAKE_CXX_COMPILER:PATH=mpicxx        \
-    -D CMAKE_C_FLAGS="-g "         \
-    -D CMAKE_CXX_FLAGS="-g "      \
-    -D CMAKE_CXX_STANDARD=14 	   \
-    -D MPIEXEC=mpirun                     \
-    -D USE_EXT_MPI_FOR_SERIAL_TESTS:BOOL=TRUE \
-    -D CMAKE_BUILD_TYPE:STRING=Release     \
-    -D CUDA_FLAGS="-arch sm_35"          \
-    -D CUDA_HOST_COMPILER="/usr/bin/gcc" \
-    -D USE_NETCDF=0 			 \
-    -D HDF5_DIRECTORY="/opt/apps/hdf5/"	 \
-    -D HDF5_LIB="/opt/apps/hdf5/lib/libhdf5.a"	\
-    -D SILO_LIB="/opt/apps/silo/lib/libsiloh5.a"	 \
-    -D SILO_DIRECTORY="/opt/apps/silo/"	 \
-    -D NETCDF_DIRECTORY="/apps/netcdf/"	 \
-    -D USE_SILO=1			 \
-    -D USE_CUDA=0                        \
-    -D USE_TIMER=0			 \
-    ${HOME}/Programs/LBPM-WIA
-
-
+cmake                                               \
+    -D CMAKE_C_COMPILER:PATH=mpicc                  \
+    -D CMAKE_CXX_COMPILER:PATH=mpicxx               \
+    -D CMAKE_C_FLAGS="-g -fPIC "                    \
+    -D CMAKE_CXX_FLAGS="-g -fPIC "                  \
+    -D CMAKE_CXX_STANDARD=14 	                    \
+    -D USE_MPI=1                                    \
+    -D MPIEXEC=mpirun                               \
+    -D USE_EXT_MPI_FOR_SERIAL_TESTS:BOOL=TRUE       \
+    -D CMAKE_BUILD_TYPE:STRING=Release              \
+    -D CUDA_HOST_COMPILER="/usr/bin/gcc"            \
+    -D USE_NETCDF=0 			            \
+    -D HDF5_DIRECTORY="${LBPM_HDF5_DIR}"	    \
+    -D HDF5_LIB="${LBPM_HDF5_DIR}/lib/libhdf5.a"    \
+    -D SILO_LIB="${LBPM_SILO_DIR}/lib/libsiloh5.a"  \
+    -D SILO_DIRECTORY="${LBPM_SILO_DIR}"	    \
+    -D NETCDF_DIRECTORY=""	                    \
+    -D USE_SILO=1			            \
+    -D USE_CUDA=1                                   \
+    -D USE_TIMER=0			            \
+    -D CMAKE_CUDA_FLAGS="-arch sm_80"               \
+    -D CMAKE_CUDA_ARCHITECTURES="80"                \
+    ${LBPM_SOURCE}
 
