@@ -868,6 +868,7 @@ void runAnalysis::createThreads(const std::string &method, int N_threads) {
         for (int i = 0; i < N; i++)
             d_tpool.setThreadAffinity(i, {cores[i + 1]});
     }
+    /*
     // Print the current affinities
     if (d_rank == 0) {
         printf("Affinities - rank 0:\n");
@@ -878,6 +879,7 @@ void runAnalysis::createThreads(const std::string &method, int N_threads) {
             print(d_tpool.getThreadAffinity(i));
         }
     }
+    */
 }
 
 /******************************************************************

@@ -29,7 +29,15 @@ extern "C" int ScaLBL_SetDevice(int rank){
         selected device if needed.
         */
         dpct::select_device(device);
-        if (rank < n_devices) printf("MPI rank=%i will use GPU ID %i / %i \n",rank,device,n_devices);
+	// auto cdev = dpct::get_current_device();
+        if (rank < n_devices) { 
+		if (dpct::get_current_device().is_cpu())
+			printf("MPI rank=%i will use CPU ID %i / %i \n",rank,device,n_devices);
+		else
+			printf("MPI rank=%i will use GPU ID %i / %i \n",rank,device,n_devices);
+		printf("Running on %s\n", dpct::get_current_device().
+				get_info<sycl::info::device::name>().c_str());
+	}
 	return device;
 }
 

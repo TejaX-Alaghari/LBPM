@@ -1,3 +1,10 @@
+#export LBPM_HDF5_DIR=/nfs/site/home/prave15x/install/HDF5-1.10.9/HDF_Group/HDF5/1.10.9
+#export LBPM_HDF5_DIR=/nfs/site/home/prave15x/install/hdf5_C/HDF_Group/HDF5/1.13.4.1/lib
+
+export LBPM_HDF5_DIR=/nfs/site/home/prave15x/install/hdf5
+export LBPM_SILO_DIR=/nfs/site/home/prave15x/install/Silo
+export LBPM_SOURCE=/nfs/site/home/prave15x/workspace/apps/LBPM
+
 # configure
 rm -rf CMake*
 cmake                                               \

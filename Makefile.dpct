@@ -1,9 +1,9 @@
 #########################################################################################
 # Set below path 
 #########################################################################################
-MPI_PATH := /home/u106853/softwares/install/mpich-4.1.2
-LBPM_DEPS_INSTALL_PATH := /home/u106853/workspace/LBPM/deps/PVC_MPICH/install
-LBPM_APP_INSTALL_PATH := /home/u106853/workspace/LBPM/SYCL/PVC_MPICH
+MPI_PATH := ${MPI_DIR}
+LBPM_DEPS_INSTALL_PATH := ${LBPM_DEPS_DIR}
+LBPM_APP_INSTALL_PATH := ${LBPM_SYCL_SOURCE}
 
 HDF5_LIB_PATH := ${LBPM_DEPS_INSTALL_PATH}/hdf5_1.14.1/lib
 HDF5_LIB_NAME1 := hdf5_hl
@@ -475,68 +475,68 @@ TARGET_54_SRC_54 = ./models/StokesModel.cpp.dp.cpp
 TARGET_54_OBJ_54 = ./models/StokesModel.cpp.dp.o
 TARGET_54_FLAG_54 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG -std=c++17 ${FLAGS}
 
-TARGET_54_SRC_55 = ./sycl/BGK.dp.cpp
-TARGET_54_OBJ_55 = ./sycl/BGK.dp.o
+TARGET_54_SRC_55 = ./cuda/BGK.dp.cpp
+TARGET_54_OBJ_55 = ./cuda/BGK.dp.o
 TARGET_54_FLAG_55 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_56 = ./sycl/Color.dp.cpp
-TARGET_54_OBJ_56 = ./sycl/Color.dp.o
+TARGET_54_SRC_56 = ./cuda/Color.dp.cpp
+TARGET_54_OBJ_56 = ./cuda/Color.dp.o
 TARGET_54_FLAG_56 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_57 = ./sycl/CudaExtras.dp.cpp
-TARGET_54_OBJ_57 = ./sycl/CudaExtras.dp.o
+TARGET_54_SRC_57 = ./cuda/CudaExtras.dp.cpp
+TARGET_54_OBJ_57 = ./cuda/CudaExtras.dp.o
 TARGET_54_FLAG_57 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_58 = ./sycl/D3Q19.dp.cpp
-TARGET_54_OBJ_58 = ./sycl/D3Q19.dp.o
+TARGET_54_SRC_58 = ./cuda/D3Q19.dp.cpp
+TARGET_54_OBJ_58 = ./cuda/D3Q19.dp.o
 TARGET_54_FLAG_58 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_59 = ./sycl/D3Q7.dp.cpp
-TARGET_54_OBJ_59 = ./sycl/D3Q7.dp.o
+TARGET_54_SRC_59 = ./cuda/D3Q7.dp.cpp
+TARGET_54_OBJ_59 = ./cuda/D3Q7.dp.o
 TARGET_54_FLAG_59 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_60 = ./sycl/D3Q7BC.dp.cpp
-TARGET_54_OBJ_60 = ./sycl/D3Q7BC.dp.o
+TARGET_54_SRC_60 = ./cuda/D3Q7BC.dp.cpp
+TARGET_54_OBJ_60 = ./cuda/D3Q7BC.dp.o
 TARGET_54_FLAG_60 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_61 = ./sycl/Extras.dp.cpp
-TARGET_54_OBJ_61 = ./sycl/Extras.dp.o
+TARGET_54_SRC_61 = ./cuda/Extras.dp.cpp
+TARGET_54_OBJ_61 = ./cuda/Extras.dp.o
 TARGET_54_FLAG_61 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_62 = ./sycl/FreeLee.dp.cpp
-TARGET_54_OBJ_62 = ./sycl/FreeLee.dp.o
+TARGET_54_SRC_62 = ./cuda/FreeLee.dp.cpp
+TARGET_54_OBJ_62 = ./cuda/FreeLee.dp.o
 TARGET_54_FLAG_62 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_63 = ./sycl/Greyscale.dp.cpp
-TARGET_54_OBJ_63 = ./sycl/Greyscale.dp.o
+TARGET_54_SRC_63 = ./cuda/Greyscale.dp.cpp
+TARGET_54_OBJ_63 = ./cuda/Greyscale.dp.o
 TARGET_54_FLAG_63 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_64 = ./sycl/GreyscaleColor.dp.cpp
-TARGET_54_OBJ_64 = ./sycl/GreyscaleColor.dp.o
+TARGET_54_SRC_64 = ./cuda/GreyscaleColor.dp.cpp
+TARGET_54_OBJ_64 = ./cuda/GreyscaleColor.dp.o
 TARGET_54_FLAG_64 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_65 = ./sycl/Ion.dp.cpp
-TARGET_54_OBJ_65 = ./sycl/Ion.dp.o
+TARGET_54_SRC_65 = ./cuda/Ion.dp.cpp
+TARGET_54_OBJ_65 = ./cuda/Ion.dp.o
 TARGET_54_FLAG_65 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_66 = ./sycl/MRT.dp.cpp
-TARGET_54_OBJ_66 = ./sycl/MRT.dp.o
+TARGET_54_SRC_66 = ./cuda/MRT.dp.cpp
+TARGET_54_OBJ_66 = ./cuda/MRT.dp.o
 TARGET_54_FLAG_66 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_67 = ./sycl/MixedGradient.dp.cpp
-TARGET_54_OBJ_67 = ./sycl/MixedGradient.dp.o
+TARGET_54_SRC_67 = ./cuda/MixedGradient.dp.cpp
+TARGET_54_OBJ_67 = ./cuda/MixedGradient.dp.o
 TARGET_54_FLAG_67 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_68 = ./sycl/Poisson.dp.cpp
-TARGET_54_OBJ_68 = ./sycl/Poisson.dp.o
+TARGET_54_SRC_68 = ./cuda/Poisson.dp.cpp
+TARGET_54_OBJ_68 = ./cuda/Poisson.dp.o
 TARGET_54_FLAG_68 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_69 = ./sycl/Stokes.dp.cpp
-TARGET_54_OBJ_69 = ./sycl/Stokes.dp.o
+TARGET_54_SRC_69 = ./cuda/Stokes.dp.cpp
+TARGET_54_OBJ_69 = ./cuda/Stokes.dp.o
 TARGET_54_FLAG_69 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
-TARGET_54_SRC_70 = ./sycl/dfh.dp.cpp
-TARGET_54_OBJ_70 = ./sycl/dfh.dp.o
+TARGET_54_SRC_70 = ./cuda/dfh.dp.cpp
+TARGET_54_OBJ_70 = ./cuda/dfh.dp.o
 TARGET_54_FLAG_70 = -DUSE_CUDA -DUSE_HDF5 -DUSE_MPI -DUSE_SILO -DUSING_GCC -I./include -I./include/null_timer -O3 -DNDEBUG ${FLAGS}
 
 TARGET_55_SRC_0 = ./tests/pmmc_cylinder.cpp
